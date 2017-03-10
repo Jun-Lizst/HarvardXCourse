@@ -22,3 +22,27 @@ lines(beta2s, RSS, type="l",col=3)
 ti2 = ti^2
 fit = lm(y~ti + ti2)
 summary(fit)
+
+X = cbind(1, ti, ti^2)
+head(X)
+
+Beta = matrix(c(55, 0, 5), 3, 1) 
+Beta
+r = y - X %*% Beta
+
+# RSS = t(r) %*% r
+RSS = crossprod(r)
+
+# = rss(55,0, 5) 
+RSS
+
+# betahat = solve(t(X) %*% X) %*% t(X) %*% y
+# similar to fit...
+betahat = solve(crossprod(X)) %*% crossprod(X, y)
+
+
+QR = qr(X)
+Q = qr.Q(QR)
+R = qr.R(QR)
+betahat = backsolve(R, crossprod(Q,y))
+
