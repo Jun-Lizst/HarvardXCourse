@@ -8,7 +8,7 @@ y = father.son$sheight
 n = length(y)
 
 # Let's run a Monte Carlo simulation in which we take a sample of size 50 
-# over and over again. 
+# over and over again.
 # Here is how we obtain one sample:
 slope = function()
 {
