@@ -180,4 +180,5 @@ hist(f.values, col="grey", border="white", breaks=50, freq=FALSE)
 # Overlay the theoretical F-distribution, with parameters df1=p - 1, df2=N - p.
 xs <- seq(from=0,to=6,length=100)
 lines(xs, df(xs, df1 = p - 1, df2 = N - p), col="red")
-df
+?df
+
